@@ -2,7 +2,12 @@ from telegram import Update
 from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, ContextTypes, filters
 import requests
 
-BOT_TOKEN = "7523594332:AAFwdqAhmQ-zqH_Ehhv6nCWWn1lnvz3pcXQ"
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+BOT_TOKEN = os.getenv("BOT_TOKEN")
+
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text("Halo! Kirim link Instagram (Reels, Post, atau Story) ke bot ini.")
